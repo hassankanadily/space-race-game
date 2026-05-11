@@ -1,0 +1,677 @@
+body{
+  font-family: 'Baloo 2', sans-serif;
+  overflow-x: hidden;
+}
+.level,.subject{
+  background-color: rgb(154, 10, 5);
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+  width:fit-content;
+  padding:5px;
+  border-radius: 5px;
+  cursor:pointer;
+  border:none;
+  margin-bottom:20px;
+  font-size: 20px;
+}
+.quiz-section{
+  margin: 0;
+  min-height: fit-content;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 85%, rgba(40, 90, 255, 0.35), transparent 35%),
+    radial-gradient(circle at 15% 35%, rgba(180, 0, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(255, 0, 180, 0.15), transparent 30%),
+    linear-gradient(
+      180deg,
+      #1b1557 0%,
+      #3b157c 40%,
+      #5a1696 65%,
+      #273b9a 100%
+    );
+  position: relative;
+  padding:20px;
+  padding-bottom:40px;
+}
+.back-star{
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+}
+.star1  { top: 8%; left: 12%; }
+.star2  { top: 15%; left: 68%; }
+.star3  { top: 22%; left: 35%; }
+.star4  { top: 30%; left: 82%; }
+.star5  { top: 12%; left: 90%; }
+
+.star6  { top: 40%; left: 18%; }
+.star7  { top: 48%; left: 55%; }
+.star8  { top: 52%; left: 75%; }
+.star9  { top: 60%; left: 8%; }
+.star10 { top: 66%; left: 42%; }
+
+.star11 { top: 72%; left: 88%; }
+.star12 { top: 78%; left: 25%; }
+.star13 { top: 84%; left: 62%; }
+.star14 { top: 90%; left: 15%; }
+.star15 { top: 95%; left: 80%; }
+
+.quiz-section img{
+  width:100%;
+}
+.home-img{
+  width:20px;
+  background-color: rgb(246, 223, 18);
+  height:20px;
+  border-radius: 65px;
+  padding:10px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  left:2.5%;
+  top:10px;
+}
+.person1-img,.person2-img{
+  width:50px;
+}
+.star-img{
+  width:30px;
+}
+.top-quiz-section{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.left-top-quiz{
+  display:flex;
+  flex-direction: row;
+}
+.person1{
+  background-color:rgb(226, 66, 93);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  padding:15px 20px 15px 20px;
+  border-radius:20px;
+  margin-left:20px;
+}
+.person1-right-part{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  margin-left:40px;
+}
+.points-box{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  gap:10px;
+}
+.person1-right-part p,.right-top-quiz p{
+  margin:0;
+}
+.person1-name,.person2-name,.question-number-box{
+  font-weight:bold;
+  font-size:22px;
+  color:white;
+}
+.points{
+  font-weight:bold;
+  color:rgb(246, 223, 18);
+  font-size:30px;
+}
+.right-top-quiz{
+  margin-left:auto;
+  margin-right:20px;
+  background-color:rgb(128, 125, 201);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  padding:15px 20px 15px 20px;
+  border-radius:20px;
+}
+.person2-left-part{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  margin-right:40px;
+}
+.progress-box{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:10px;
+}
+.rocket-img{
+  width:25px;
+}
+.rocket-img img{
+  width:100%;
+}
+.progress-bar{
+  border: 2px solid rgb(246, 223, 18);
+  height:30px;
+  width:100%;
+  margin:0 10px 0 10px;
+  border-radius:15px;
+  overflow:hidden;
+}
+.progress-filler{
+  height:100%;
+  width:30%;
+  background:linear-gradient(90deg,#ff4d4d,
+    #ff944d,
+    #ffd24d);
+}
+.questions-and-answers{
+  padding:0 30px 0 30px;
+}
+.question-box,
+.actual-answer{
+  transition: opacity 0.5s;
+}
+.question-box{
+  width:100%;
+  color:darkblue;
+  background-color: white;
+  font-weight:bold;
+  font-size:30px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:0;
+  padding:25px 0 25px 0;
+  border-radius:25px;
+  margin-bottom:30px;
+}
+.answers-box{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap:15px;
+  margin:0;
+}
+.actual-answer{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  margin:0;
+  color:white;
+  font-size:24px;
+  font-weight:bold;
+  background:linear-gradient(60deg,rgb(206, 39, 181),rgb(212, 46, 146),rgb(206, 39, 181),rgb(212, 46, 146));
+  border-radius:15px;
+  padding:30px 0 30px 0;
+  cursor:pointer;
+}
+.winner-section{
+  background: linear-gradient(180deg,#5b1a9e 0%,
+  #8a1fa2 20%,
+  #d1007a 45%,
+  #ff2f6d 65%,
+  #ff5a36 85%,
+  #ff6a00 100%);
+  position:relative;
+  padding:20px;
+  padding-bottom:100px;
+}
+.winner-section img{
+  width:100%;
+}
+.saturn-img{
+  width:50px;
+  margin-left:40px;
+}
+.trophy-img{
+  width:100px;
+}
+.winner-img{
+  width:60px;
+}
+.winner-star-img{
+  width:24px;
+  margin-top:10px;
+}
+.center-winner-box{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+}
+.winner-name{
+  font-size:45px;
+  color:white;
+  font-weight:bold;
+  margin:0;
+  text-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+}
+.winner-reward-box{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  gap:10px;
+}
+.winner-sentence{
+  font-size:24px;
+  font-weight:bold;
+  margin:0;
+  color:rgb(246, 223, 18);
+}
+.star-score{
+  width:24px;
+  margin-top:5px;
+}
+.player-scores{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  margin-top:20px;
+}
+.winner-score,.second-score{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  background-color: rgb(228, 221, 221);
+  border-radius:15px;
+  padding:10px 20px 10px 20px;
+}
+.winner-score-name,.second-score-name{
+  color:#5a1696;
+  font-weight: bold;
+  margin:0;
+}
+.score-and-star{
+  display:flex;
+  flex-direction:row;
+  height:fit-content;
+  margin-top:0;
+  gap:10px;
+}
+.winner-points,.second-points{
+  font-size:24px;
+  font-weight:bold;
+  color:rgb(167, 19, 19);
+  margin:0;
+}
+.versus{
+  margin:0 30px 0 30px;
+  font-size:40px;
+  font-weight:bold;
+  color:rgb(246, 223, 18);
+}
+.play-again-button{
+  display:flex;
+  align-items: center;
+  flex-direction: row;
+  width:fit-content;
+  height:80px;
+  padding:0px 50px 0px 50px;
+  border-radius:45px;
+  background:linear-gradient(90deg,rgb(18, 221, 150) 0%,
+  rgb(27, 198, 227) 40%,
+  rgb(91, 101, 255) 70%,
+  rgb(132, 44, 255) 100%);
+  margin-top:20px;
+  gap:10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+  cursor:pointer;
+}
+.controller-img{
+  width:30px;
+  margin-top:5px;
+}
+.controller-img img{
+  width:100%;
+}
+.play-again-text{
+  color:white;
+  font-weight:bold;
+  font-size:30px;
+}
+.earth-img{
+  position:absolute;
+  width:50px;
+  right:10px;
+  bottom:10px;
+}
+.earth-img img{
+  width:100%;
+}
+section{
+  transition: transform 0.9s ease;
+  height:100vh;
+  width:100%;
+  box-sizing: border-box;
+  overflow-x:hidden;
+}
+section.active{
+  transform: translateX(0);
+}
+section.exit-right{
+  transform:translateX(100%);
+  display:none;
+}
+.filled-section{
+  /*position:absolute;*/
+  width:100%;
+}
+.test-div{
+  display:none;
+}
+
+.actual-answer.correct{
+  background: green;
+}
+.actual-answer.wrong{
+  background:rgb(220, 53, 69);
+}
+/*PAGE 1 JOMANA*/
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /*body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Baloo 2', sans-serif;
+      overflow: hidden;
+    }*/
+
+    .space-bg {
+      background: linear-gradient(135deg, #1a0533 0%, #2d1060 30%, #1e2a7a 70%, #0f1a5a 100%);
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /*.stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }*/
+
+    .planet-left {
+      position: absolute;
+      left: -40px;
+      top: 30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 38%, #c084fc, #7e22ce 70%);
+      animation: floatUpDown 3.5s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .planet-right {
+      position: absolute;
+      right: -40px;
+      bottom: 40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 38%, #c2855c, #7c4a28 70%);
+      animation: floatUpDown 4s ease-in-out infinite reverse;
+      z-index: 1;
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-24px); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      font-size: clamp(32px, 6vw, 60px);
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f9c74f;
+      margin-bottom: 48px;
+      letter-spacing: 0.5px;
+    }
+
+    .grades-row {
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .grade-btn {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .grade-btn:hover {
+      transform: scale(1.13) translateY(-10px);
+      box-shadow: 0 22px 56px rgba(0,0,0,0.55);
+    }
+
+    .grade-btn .emoji {
+      font-size: 48px;
+      line-height: 1;
+      display: block;
+    }
+
+    .g1 { background: radial-gradient(circle at 38% 35%, #f9a8d4, #ec4899 70%); }
+    .g2 { background: radial-gradient(circle at 38% 35%, #7dd3fc, #2563eb 70%); }
+    .g3 { background: radial-gradient(circle at 38% 35%, #6ee7b7, #10b981 70%); }
+
+    .info-bar {
+      background: rgba(90, 50, 200, 0.75);
+      border-radius: 14px;
+      padding: 14px 32px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .info-icon {
+      background: #4f46e5;
+      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .rocket {
+      position: absolute;
+      top: 40px;
+      right: 100px;
+      font-size: 30px;
+      animation: rocketFloat 2.5s ease-in-out infinite alternate;
+      transform: rotate(-30deg);
+      z-index: 2;
+    }
+
+    @keyframes rocketFloat {
+      0%   { transform: rotate(-30deg) translateY(0); }
+      100% { transform: rotate(-30deg) translateY(-12px); }
+    }
+
+    /*PAGE 2 JOMANA*/
+    .main{
+    background: linear-gradient(135deg, #1a0533 0%, #2d1060 30%, #1e2a7a 70%, #0f1a5a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Baloo 2', sans-serif;
+}
+h1{
+    font-weight: bolder;
+    color: white;
+    font-size: 55px;
+    margin-bottom: 0%;
+}
+.subtitle{
+    font-size: 20px;
+    color: #f9c74f;
+    margin-bottom: 40px;
+    margin-top: -10px;
+    text-align: center; 
+}
+.subjects {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 28px;
+}
+.Math{
+    border: 1px ;
+    border-radius: 15px;
+    padding: 5px 46px; /* 15(top & bottom) 25(left & right) */
+    font-size:25;
+    color: white;
+    background: radial-gradient(circle at 38% 35%, #b1acdd, #392ac0);
+    font-weight:bold ;
+    text-align: center;
+    font-size: 20px;
+    cursor:pointer;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    margin-top: 0%;
+}
+.Science{
+    border: 1px;
+    border-radius: 15px;
+    padding: 5px 45px;
+    font-size:25;
+    color: white;
+    cursor: pointer;
+    background: radial-gradient(circle at 38% 35%, #f9a8d4, #ec4899 70%); 
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    margin-top: 0%;
+}
+.English{
+    border: 1px;
+    border-radius: 15px;
+    padding: 5px 45px; 
+    font-size:25;
+    color: white;
+    font-weight: bold;
+    background: radial-gradient(circle at 38% 35%, #89cfdf, #08f2ea);
+    text-align: center;
+    font-size: 20px;
+    cursor:pointer;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    margin-top: 0%;
+}
+.Religion{
+    border: 1px;
+    border-radius: 15px;
+    padding: 5px 45px; 
+    font-size:25;
+    color: white;
+    background: radial-gradient(circle at 38% 35%, #f9ddbd, #e1af77);
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    cursor:pointer;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    margin-top: 0%;
+}
+.Math,.Science,.English,.Religion{
+  transition: transform 0.5s ease,box-shadow 0.5s ease;
+}
+.Math:hover, .Science:hover, .English:hover, .Religion:hover {
+    transform: scale(1.13) translateY(-7px);
+    box-shadow: 0 22px 56px rgba(0,0,0,0.55);
+}
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+} 
+.rocket {
+    position: fixed;
+    top: 40px;
+    right: 100px;
+    font-size: 50px;
+    animation: rocketFloat 2.5s ease-in-out infinite alternate;
+    transform: rotate(-30deg);
+    z-index: 2;
+}
+@keyframes rocketFloat {
+    0%   { transform: rotate(-30deg) translateY(0); }
+    100% { transform: rotate(-30deg) translateY(-12px); }
+}
+.starMoji {
+    position: fixed;
+    bottom: 40px;
+    left: 100px;
+    font-size: 50px;
+    animation: starMojiFloat 1.5s ease-in-out infinite alternate;
+    transform: rotate(-30deg);
+    z-index: 2;
+}
+@keyframes starMojiFloat {
+    0%   { transform: rotate(-30deg) translateY(0); }
+    100% { transform: rotate(-30deg) translateY(-20px); }
+}

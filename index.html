@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&display=swap" rel="stylesheet">
+  <title>Rocket Racers</title>
+</head>
+<body>
+  <div>
+    <div class="test-div">
+
+    </div>
+    <!--<h1>Select Level</h1>
+    <button class="level" value="grade2">Grade 2</button>
+    <button class="level" value="grade3">Grade 3</button>
+    <button class="level" value="grade4">Grade 4</button>
+  </div>
+  <div>
+    <h1>Select Subject</h1>
+    <button class="subject" value="math">Math</button>
+    <button class="subject" value="science">Science</button>
+    <button class="subject" value="english">English</button>
+    <button class="subject" value="religion">Religion</button>
+  </div>
+  <button id="startQuiz">Start Quiz</button>-->
+
+  
+  <!--<button value="next-question" id="nextQ">Next Question</button>-->
+
+  <!--<div class="filled-section">
+
+  </div>-->
+  <section class="select-level-section" id="select-level-sec">
+    <div class="stars" id="stars"></div>
+    <div class="planet-left"></div>
+    <div class="planet-right"></div>
+    <div class="rocket">🚀</div>
+
+    <div class="space-bg">
+      <div class="content">
+        <h1 class="title">Choose Your Grade Level</h1>
+        <p class="subtitle">✦ Start your space adventure! ✦</p>
+
+        <div class="grades-row">
+          <button class="grade-btn g1 new-level" value="grade2">
+            <span class="emoji">🪐</span>
+            Grade 2
+          </button>
+          <button class="grade-btn g2 new-level" value="grade3">
+            <span class="emoji">🌍</span>
+            Grade 3
+          </button>
+          <button class="grade-btn g3 new-level" value="grade4">
+            <span class="emoji">⭐</span>
+            Grade 4
+          </button>
+        </div>
+
+        <div class="info-bar">
+          <div class="info-icon">ℹ</div>
+          Choose your grade to get questions just right for you!
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="select-subject-section" id="select-subject-sec">
+    <div class="rocket">🛸</div>
+    <div class="starMoji">🌟</div>
+    <div class = "main">
+        <h1>Pick a Subject</h1>
+        <p class = "subtitle"> What would you like to explore today?</p>
+        <div class ="subjects">
+            <div class = "Math new-subject" value="math">
+                <span style="font-size:50px;">➕</span>
+                <p>Math</p>
+            </div>
+            <div class = "Science new-subject" value="science">
+                <span style="font-size:50px;">🧪</span>
+                <p>Science</p>
+            </div>
+        </div>
+        <div class = "subjects">
+            <div class = "English new-subject" value="english">
+                <span style="font-size:50px;">📚</span>
+                <p>English</p>
+            </div>
+            <div class = "Religion new-subject" value="religion">
+                <span style="font-size:50px;">✨</span>
+                <p>Religion</p>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section class="start-quiz-section" id="start-quiz-sec">
+    <button id="startQuiz">Start Quiz</button>
+  </section>
+  <section class="quiz-section" id="quiz">
+    <div class="top-quiz-section">
+      <div class="left-top-quiz">
+        <div class="home-img">
+          <img src="pictures/home.png">
+        </div>
+        <div class="person1">
+          <div class="person1-img">
+            <img src="pictures/astronaut.png">
+          </div>
+          <div class="person1-right-part">
+            <p class="person1-name">Hassan</p>
+            <div class="points-box">
+              <div class="star-img">
+                <img src="pictures/star.png">
+              </div>
+              <p class="points" id="person1-points">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-top-quiz">
+        <div class="person2-left-part">
+          <p class="person2-name">Malak</p>
+          <div class="points-box">
+            <div class="star-img">
+              <img src="pictures/star.png">
+            </div>
+            <p class="points" id="person2-points">0</p>
+          </div>
+        </div>
+        <div class="person2-img">
+          <img src="pictures/alien.png">
+        </div>
+      </div>
+    </div>
+    <div class="progress-box">
+      <div class="rocket-img">
+        <img src="pictures/rocket.png">
+      </div>
+      <div class="progress-bar">
+        <div class="progress-filler"></div>
+      </div>
+      <p class="question-number-box"><span>2</span><span>/</span><span>7</span></p>
+      
+    </div>
+    <div class="questions-and-answers">
+      <p data-value="question" id="displayed-question" class="question-box">What is 2 + 3?</p>
+      <div class="answers-box">
+      <p data-value="A" id="a" class="actual-answer">4</p>
+      <p data-value="B" id="b" class="actual-answer">5</p>
+      <p data-value="C" id="c" class="actual-answer">6</p>
+      <p data-value="D" id="d" class="actual-answer">7</p>
+    </div>
+    </div>
+
+    <div class="star1 back-star"></div>
+    <div class="star2 back-star"></div>
+    <div class="star3 back-star"></div>
+    <div class="star4 back-star"></div>
+    <div class="star5 back-star"></div>
+    <div class="star6 back-star"></div>
+    <div class="star7 back-star"></div>
+    <div class="star8 back-star"></div>
+    <div class="star9 back-star"></div>
+    <div class="star10 back-star"></div>
+    <div class="star11 back-star"></div>
+    <div class="star12 back-star"></div>
+    <div class="star13 back-star"></div>
+    <div class="star14 back-star"></div>
+    <div class="star15 back-star"></div>
+  </section>
+
+  <section class="winner-section" id="winner">
+    <div class="home-img">
+      <img src="pictures/home.png">
+    </div>
+    <div class="saturn-img">
+      <img src="pictures/saturn.png">
+    </div>
+    <div class="center-winner-box">
+      <div class="trophy-img">
+        <img src="pictures/trophy.png">
+      </div>
+      <p class="winner-name">Hassan Wins!</p>
+      <div class="winner-img">
+        <img src="pictures/astronaut.png">
+      </div>
+      <div class="winner-reward-box">
+        <p class="winner-sentence">Amazing job! You scored 2 points</p>
+        <div class="winner-star-img">
+          <img src="pictures/star2.png">
+        </div>
+      </div>
+      <div class="player-scores">
+      <div class="winner-score">
+        <p class="winner-score-name">Hassan</p>
+        <div class="score-and-star">
+          <div class="star-score">
+            <img src="pictures/star.png">
+          </div>
+          <p class="winner-points">2</p>
+        </div>
+      </div>
+      <p class="versus">VS</p>
+      <div class="second-score">
+        <p class="second-score-name">Malak</p>
+        <div class="score-and-star">
+          <div class="star-score">
+            <img src="pictures/star.png">
+          </div>
+          <p class="second-points">1</p>
+        </div>
+      </div>
+    </div>
+      <div class="play-again-button">
+        <div class="controller-img">
+          <img src="pictures/gamepad.png">
+        </div>
+        <p class="play-again-text">Play Again</p>
+      </div>
+    </div>
+
+    <div class="earth-img">
+      <img src="pictures/earth.png">
+    </div>
+
+
+    <div class="star1 back-star"></div>
+    <div class="star2 back-star"></div>
+    <div class="star3 back-star"></div>
+    <div class="star4 back-star"></div>
+    <div class="star5 back-star"></div>
+    <div class="star6 back-star"></div>
+    <div class="star7 back-star"></div>
+    <div class="star8 back-star"></div>
+    <div class="star9 back-star"></div>
+    <div class="star10 back-star"></div>
+    <div class="star11 back-star"></div>
+    <div class="star12 back-star"></div>
+    <div class="star13 back-star"></div>
+    <div class="star14 back-star"></div>
+    <div class="star15 back-star"></div>
+  </section>
+    <div class="star1 back-star"></div>
+    <div class="star2 back-star"></div>
+    <div class="star3 back-star"></div>
+    <div class="star4 back-star"></div>
+    <div class="star5 back-star"></div>
+    <div class="star6 back-star"></div>
+    <div class="star7 back-star"></div>
+    <div class="star8 back-star"></div>
+    <div class="star9 back-star"></div>
+    <div class="star10 back-star"></div>
+    <div class="star11 back-star"></div>
+    <div class="star12 back-star"></div>
+    <div class="star13 back-star"></div>
+    <div class="star14 back-star"></div>
+    <div class="star15 back-star"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
