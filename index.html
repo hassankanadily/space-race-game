@@ -14,26 +14,6 @@
     <div class="test-div">
 
     </div>
-    <!--<h1>Select Level</h1>
-    <button class="level" value="grade2">Grade 2</button>
-    <button class="level" value="grade3">Grade 3</button>
-    <button class="level" value="grade4">Grade 4</button>
-  </div>
-  <div>
-    <h1>Select Subject</h1>
-    <button class="subject" value="math">Math</button>
-    <button class="subject" value="science">Science</button>
-    <button class="subject" value="english">English</button>
-    <button class="subject" value="religion">Religion</button>
-  </div>
-  <button id="startQuiz">Start Quiz</button>-->
-
-  
-  <!--<button value="next-question" id="nextQ">Next Question</button>-->
-
-  <!--<div class="filled-section">
-
-  </div>-->
   <section class="select-level-section" id="select-level-sec">
     <div class="stars" id="stars"></div>
     <div class="planet-left"></div>
@@ -96,7 +76,68 @@
     </div>
   </section>
   <section class="start-quiz-section" id="start-quiz-sec">
-    <button id="startQuiz">Start Quiz</button>
+      <div class="rocket">🚀</div>
+    <div class = "input-and-next">
+        <h1> Meet the space Explorers</h1>
+        <p class = "subtitle"> Enter names and pick your avatars!</p>
+        <div class = "players">
+            <div class = "player1">
+                <span><i class="fi fi-rr-user"></i></span>
+                <input type="text" placeholder="Player 1 Name" id="player-1-name">
+                <div class = "characters">
+                    <button class="char1-button">🧑‍🚀</button>
+                    <button class="char1-button">👽</button>
+                    <button class="char1-button">🤖</button> 
+                </div>
+            </div>
+
+            <div class = "player2">
+                <span><i class="fi fi-rr-user"></i></span>
+                <input type="text" placeholder="Player 2 Name" id="player-2-name">
+                <div class = "characters">
+                    <button class="char2-button">🧑‍🚀</button>
+                    <button class="char2-button">👽</button>
+                    <button class="char2-button">🤖</button> 
+                </div>
+            </div>
+            <div class = "next" id="startQuiz">
+                <button>Next ➡️</button>
+            </div>
+            
+
+        </div>
+    </div>
+    <div id="stars"></div>
+    <script>
+    const starsEl = document.getElementById('stars');
+    for (let i = 0; i < 80; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top = Math.random() * 100 + '%';
+      s.style.opacity = (Math.random() * 0.5 + 0.2).toFixed(2);
+      const size = (Math.random() * 2.5 + 1).toFixed(1) + 'px';
+      s.style.width = size;
+      s.style.height = size;
+      starsEl.appendChild(s);
+    }
+    document.querySelectorAll('.player1 .characters button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.player1 .characters button')
+          .forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    document.querySelectorAll('.player2 .characters button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.player2 .characters button')
+          .forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    </script>
   </section>
   <section class="quiz-section" id="quiz">
     <div class="top-quiz-section">
@@ -106,7 +147,7 @@
         </div>
         <div class="person1">
           <div class="person1-img">
-            <img src="pictures/astronaut.png">
+            <p></p>
           </div>
           <div class="person1-right-part">
             <p class="person1-name">Hassan</p>
@@ -130,7 +171,7 @@
           </div>
         </div>
         <div class="person2-img">
-          <img src="pictures/alien.png">
+          <p></p>
         </div>
       </div>
     </div>

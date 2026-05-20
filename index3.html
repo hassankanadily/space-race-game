@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+  </head>
+  <body>
+    <div class="rocket">🚀</div>
+    <div class="main">
+      <h1>Meet the space Explorers</h1>
+      <p class="subtitle">Enter names and pick your avatars!</p>
+      <div class="players">
+        <div class="player1">
+          <span><i class="fi fi-rr-user"></i></span>
+          <input type="text" placeholder="Player 1 Name" />
+          <div class="characters">
+            <button>🧑‍🚀</button>
+            <button>👽</button>
+            <button>🤖</button>
+          </div>
+        </div>
+
+        <div class="player2">
+          <span><i class="fi fi-rr-user"></i></span>
+          <input type="text" placeholder="Player 2 Name" />
+          <div class="characters">
+            <button>🧑‍🚀</button>
+            <button>👽</button>
+            <button>🤖</button>
+          </div>
+        </div>
+        <div class="next">
+          <button>Next ➡️</button>
+        </div>
+      </div>
+    </div>
+    <div id="stars"></div>
+    <script>
+      const starsEl = document.getElementById("stars");
+      for (let i = 0; i < 80; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        s.style.left = Math.random() * 100 + "%";
+        s.style.top = Math.random() * 100 + "%";
+        s.style.opacity = (Math.random() * 0.5 + 0.2).toFixed(2);
+        const size = (Math.random() * 2.5 + 1).toFixed(1) + "px";
+        s.style.width = size;
+        s.style.height = size;
+        starsEl.appendChild(s);
+      }
+      document
+        .querySelectorAll(".player1 .characters button")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document
+              .querySelectorAll(".player1 .characters button")
+              .forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+          });
+        });
+
+      document
+        .querySelectorAll(".player2 .characters button")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document
+              .querySelectorAll(".player2 .characters button")
+              .forEach((b) => b.classList.remove("selected"));
+            btn.classList.add("selected");
+          });
+        });
+    </script>
+  </body>
+</html>
