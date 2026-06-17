@@ -92,6 +92,10 @@ startQuizBtn.addEventListener("click", () => {
 const playAgainBtn = document.querySelector(".play-again-button");
 
 playAgainBtn.addEventListener("click", () => {
+  showPage("select-level-sec");
+});
+
+/*playAgainBtn.addEventListener("click", () => {
   quizSection.style.opacity = "1";
   winnerSection.style.transform = "translateY(100%)";
   quizSection.style.transform = "translateY(0)";
@@ -101,7 +105,7 @@ playAgainBtn.addEventListener("click", () => {
     winnerSection.style.transform = "translateY(-100%)";
     //winnerSection.style.display = "none";
   }, 1000);
-});
+});*/
 
 const levels = document.querySelectorAll(".new-level");
 let selectedLevel = null;
@@ -209,6 +213,7 @@ socket.on("answer-detected", (data) => {
 
   if (letter === null) {
     if (counter === currentIndex - 1 && data.sensor !== null) {
+      currentQuestionNumber.textContent = counter;
       checkAnswer(data);
     }
   }
@@ -232,7 +237,7 @@ function checkAnswer(data) {
     console.log(currentIndex);
     if (letter === answer) {
       counter++;
-      if (carId === "03C5EF2C") {
+      if (carId === "532B86357301") {
         car1Score++;
         document.getElementById("person1-points").textContent = car1Score;
         console.log("Car 1 Score: ", car1Score);
@@ -362,3 +367,7 @@ function checkWinner(player1Points, player2Points) {
     secondPoints.textContent = player1Points;
   }
 }
+
+const currentQuestionNumber = document.getElementById(
+  "current-question-number",
+);
