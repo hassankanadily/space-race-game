@@ -237,7 +237,7 @@ function checkAnswer(data) {
     if (letter === answer) {
       counter++;
       currentQuestionNumber.textContent = counter;
-      if (carId === "532B86357301") {
+      if (carId === "534C50357301") {
         car1Score++;
         document.getElementById("person1-points").textContent = car1Score;
         console.log("Car 1 Score: ", car1Score);
