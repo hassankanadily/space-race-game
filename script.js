@@ -146,10 +146,10 @@ let currentIndex = 0;
 function displayQuestions(data) {
   console.log("eshtaghal");
   let currentQuestion = data[currentIndex]["question"];
-  let A = data[currentIndex]["options"]["A"];
-  let B = data[currentIndex]["options"]["B"];
-  let C = data[currentIndex]["options"]["C"];
-  let D = data[currentIndex]["options"]["D"];
+  let A = "A. " + data[currentIndex]["options"]["A"];
+  let B = "B. " + data[currentIndex]["options"]["B"];
+  let C = "C. " + data[currentIndex]["options"]["C"];
+  let D = "D. " + data[currentIndex]["options"]["D"];
 
   document.getElementById("displayed-question").textContent = currentQuestion;
   document.getElementById("a").textContent = A;
@@ -213,7 +213,6 @@ socket.on("answer-detected", (data) => {
 
   if (letter === null) {
     if (counter === currentIndex - 1 && data.sensor !== null) {
-      currentQuestionNumber.textContent = counter;
       checkAnswer(data);
     }
   }
@@ -237,6 +236,7 @@ function checkAnswer(data) {
     console.log(currentIndex);
     if (letter === answer) {
       counter++;
+      currentQuestionNumber.textContent = counter;
       if (carId === "532B86357301") {
         car1Score++;
         document.getElementById("person1-points").textContent = car1Score;
@@ -366,8 +366,11 @@ function checkWinner(player1Points, player2Points) {
     secondName.textContent = name1.textContent;
     secondPoints.textContent = player1Points;
   }
+  winnerFinalPoints.textContent = winnerPoints.textContent;
 }
 
 const currentQuestionNumber = document.getElementById(
   "current-question-number",
 );
+
+const winnerFinalPoints = document.getElementById("winner-final-points");
